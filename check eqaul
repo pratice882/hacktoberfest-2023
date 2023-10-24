@@ -1,0 +1,23 @@
+Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
+Note : If there are repetitions, then counts of repeated elements must also be same for two array to be equal.
+
+
+from collections import Counter
+
+def areArraysEqual(A, B):
+    # Check if the lengths of both arrays are the same.
+    if len(A) != len(B):
+        return False
+
+    # Use Counter to count the occurrences of each element in both arrays.
+    counter_A = Counter(A)
+    counter_B = Counter(B)
+
+    # Compare the two Counter objects to check if they are equal.
+    return counter_A == counter_B
+
+# Example usage:
+A = [1, 2, 2, 3, 4]
+B = [3, 2, 4, 2, 1]
+result = areArraysEqual(A, B)
+print(result)  # Output: True
